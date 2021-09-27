@@ -32,7 +32,6 @@ install_requires = [
     "html5lib>=0.999,<2",
     "Willow[heif]>=1.6.2,<1.7",
     "requests>=2.11.1,<3.0",
-    "l18n>=2018.5",
     "openpyxl>=3.0.10,<4.0",
     "anyascii>=0.1.5",
     "telepath>=0.1.1,<1",
@@ -66,6 +65,8 @@ testing_extras = [
     "factory-boy>=3.2",
     # For running tests in parallel
     "tblib>=2.0,<3.0",
+    # For generating timezone translations.
+    "polib>=1.2,<2.0",
 ]
 
 # Documentation dependencies

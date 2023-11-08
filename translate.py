@@ -9,10 +9,9 @@ Language experts should review these and make necessary adjustments.
 
 # Import from standard library.
 import datetime
-import os
 import json
+import os
 import urllib
-
 
 # Setup django so we can import things from Wagtail.
 import django  # noqa
@@ -131,7 +130,7 @@ for item in WAGTAILADMIN_PROVIDED_LANGUAGES:
 
     # Download territories in the language.
     cldr_territories = {}
-    print(f"Downloading territories for {lang}...")
+    print(f"Downloading territories for {lang}...")  # noqa: T201
     uri = f"{URL}/cldr-localenames-full/main/{lang}/territories.json"
     try:
         data = _download_json(uri)
@@ -146,7 +145,7 @@ for item in WAGTAILADMIN_PROVIDED_LANGUAGES:
     # Download timezones in the language.
     cldr_timezones = {}
     cldr_metazones = {}
-    print(f"Downloading timezones for {lang}...")
+    print(f"Downloading timezones for {lang}...")  # noqa: T201
     uri = f"{URL}/cldr-dates-full/main/{lang}/timeZoneNames.json"
     try:
         data = _download_json(uri)
@@ -185,7 +184,6 @@ for item in WAGTAILADMIN_PROVIDED_LANGUAGES:
 
         # If this is a metazone, process it separately.
         if metazone:
-
             # Translate first part of zone as territory.
             ter = _get_territory(cldr_territories, zones[0])
             if ter:
@@ -203,7 +201,7 @@ for item in WAGTAILADMIN_PROVIDED_LANGUAGES:
                 try:
                     z = z[subzone]
                 except KeyError:
-                    print(f"WARNING: '{timezone}' not found in '{lang}'.")
+                    print(f"WARNING: '{timezone}' not found in '{lang}'.")  # noqa: T201
                     exists = False
 
                 # If this zone does not have an exemplarCity/long, try to

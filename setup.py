@@ -65,8 +65,6 @@ testing_extras = [
     "factory-boy>=3.2",
     # For running tests in parallel
     "tblib>=2.0,<3.0",
-    # For generating timezone translations.
-    "polib>=1.2,<2.0",
 ]
 
 # Documentation dependencies
